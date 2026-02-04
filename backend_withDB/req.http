@@ -1,0 +1,72 @@
+### user api calls
+
+###  Read all users
+GET http://localhost:4000/user-api/users
+
+### Read user by ObjectId
+GET http://localhost:4000/user-api/users/697f7b1fc078ff03bd86884d
+
+###  Create user
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username": "nasar",
+    "password": "fazal123",
+    "age": 20
+}
+
+### Update user by ObjectID
+PUT http://localhost:4000/user-api/users/697dbc40cbf6f22fb94072e4
+Content-Type: application/json
+
+{
+    "username": "rahul",
+    "password": "sandeep1434",
+    "age":22
+}
+
+### Delete user by ObjectId
+DELETE http://localhost:4000/user-api/users/697dbc9901a915c8231527e0
+
+
+### user authentication(Login) req
+POST  http://localhost:4000/user-api/auth
+Content-Type:application/json
+
+{
+    "username": "pranay",
+    "password": "fazal123"
+}
+
+### request for protected route
+GET http://localhost:4000/user-api/test
+
+
+### product api calls
+
+### read all products
+GET http://localhost:4000/product-api/products
+
+### create product
+POST http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "pid": 4,
+    "productName": "watch",
+    "price": 3500
+}
+
+### get product by ObjectId
+GET http://localhost:4000/product-api/products/697dd0a1eebc8b558763334d
+
+### update product by ObjectId
+PUT http://localhost:4000/product-api/products/697dd0a1eebc8b558763334d
+Content-Type: application/json
+
+{
+    "pid":3,
+    "productName":"Hoodie",
+    "price":4500
+}

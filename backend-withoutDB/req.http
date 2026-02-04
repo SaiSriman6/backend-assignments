@@ -1,0 +1,65 @@
+### Product API calls
+### Get all products
+GET http://localhost:3001/product-api/products
+
+### Add a new product
+POST http://localhost:3001/product-api/products
+Content-Type: application/json
+
+{
+    "productId":107,
+    "name":"shoes",
+    "price":4000,
+    "brand":"puma"
+}
+
+### update an existing product
+PUT http://localhost:3001/product-api/products
+Content-Type: application/json
+
+{
+    "productId":104,
+    "name":"sweatshirt",
+    "price":3500,
+    "brand":"nike"
+}
+
+### get a product by id
+GET http://localhost:3001/product-api/product-id/103
+
+### get products by brand
+GET http://localhost:3001/product-api/product-brand/Puma
+
+### delete a product by id
+DELETE http://localhost:3001/product-api/products/107 
+
+
+### User API calls
+### get all users
+GET http://localhost:3001/user-api/users
+
+### create a new user
+POST http://localhost:3001/user-api/users
+Content-Type: application/json
+
+{
+    "id":2,
+    "name":"dhanesh",
+    "age":20
+}
+
+### get a user by id
+GET  http://localhost:3001/user-api/users/2
+
+### update an existing user
+PUT http://localhost:3001/user-api/users
+Content-Type: application/json
+
+{
+    "id":2,
+    "name":"manish",
+    "age":21
+}
+
+### delete a user by id
+DELETE http://localhost:3001/user-api/users/2

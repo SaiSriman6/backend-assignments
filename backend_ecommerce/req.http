@@ -1,0 +1,37 @@
+### product-api calls
+
+###get all products
+GET http://localhost:4000/product-api/products
+
+### create a product
+POST http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "productName": "Led Tv",
+    "price": 20000,
+    "brand": "sony"
+}
+
+
+### user-api calls
+
+### create a user
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "name":"karthik",
+    "email":"karthik@gmail.com",
+    "password":"karthik123",
+    "cart":[]
+}
+
+### request to add product to cart
+PUT http://localhost:4000/user-api/user-cart/user-id/69833914291ad2092c41d4d4/product-id/6981a5e514774193da106d43
+
+### get user by id
+GET http://localhost:4000/user-api/user-id/69833914291ad2092c41d4d4
+
+### get all users
+GET http://localhost:4000/user-api/users
