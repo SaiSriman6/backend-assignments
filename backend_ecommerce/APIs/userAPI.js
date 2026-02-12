@@ -93,7 +93,7 @@ userApp.put('/user-cart/user-id/:uid/product-id/:pid',async(req,res)=>{
 //read user by id
 userApp.get('/user-id/:uid',async(req,res)=>{
 
-    // get objectIf from url params
+    // get objectId from url params
     let userId=req.params.uid;
 
     // find user from database using findByid
@@ -105,6 +105,18 @@ userApp.get('/user-id/:uid',async(req,res)=>{
     }
 
     // if user exists send response
-    return res.status(200).json({message:"user found",payload:user});
+    return res.status(401).json({message:"user found",payload:user});
 })
 
+// delete user by id
+userApp.delete('/user-delete/:uid',async(req,res)=>{
+  //get objectId from url params
+  let userId=req.params.uid;
+  //find user by id and delete
+  let deletedUser= await UserModel.findByIdAndDelete(userId);
+  if(!deletedUser){
+    return res.status(401).json({message:"user not found"});
+  }
+  // if user exists and deleted
+  res.status(200).json({message:"User deleted",payload:deletedUser});
+})

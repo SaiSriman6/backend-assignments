@@ -5,18 +5,17 @@ import {userApp} from "./APIs/userAPI.js"
 import {productApp} from "./APIs/productAPI.js"
 //import connect
 import {connect} from "mongoose";
-import { config } from "dotenv";
 
-config()  //process .env
+
 //create server
 const app=exp()
 
 //connect to database
 async function connection(){
     try{
-        await connect(process.env.DB_URL);
+        await connect("mongodb://localhost:27017/ecommercedb");
         console.log("Connected to database");
-        app.listen(process.env.PORT,()=>{console.log("listening from port 4000")});
+        app.listen(4000,()=>{console.log("listening from port 4000")});
     }
     catch(err){
         console.log("error in connecting database",err);
