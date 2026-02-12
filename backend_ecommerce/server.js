@@ -6,7 +6,6 @@ import {productApp} from "./APIs/productAPI.js"
 //import connect
 import {connect} from "mongoose";
 
-
 //create server
 const app=exp()
 
